@@ -1,0 +1,24 @@
+.amarillo {
+    background: yellow;
+}
+
+.p-3 {
+    box-sizing: border-box;
+    padding: 30px;
+}
+.text-blue {
+    color: blue;
+}
+
+.negro {
+    background-color: black;
+}
+.rojo {
+    background-color: crimson;
+}
+.t-rojo {
+    color: crimson;
+}
+.t-negro {
+    color: black
+}

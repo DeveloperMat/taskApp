@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+
+    .tareaRealizada {
+        text-decoration: line-through;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container text-center">
+    <div id="taskApp" class="col-sm-12 col-sm-offset">
+        <h1 class="mb-2">{{title}}</h1>
+
+        <form v-on:submit="agregarTarea">
+            <input type="text" v-model="tareas.titulo" class="form-control">
+            <input type="submit" value="Agregar tarea" class="btn btn-primary btn-block mt-2">
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hecho!</th>
+                    <th>Tarea</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="tarea in tareas">
+                    <td>
+                        <input type="checkbox" v-model="tarea.estado">
+                    </td>
+                    <td :class="{tareaRealizada: tarea.estado}">
+                        {{tarea.titulo}}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" v-on:click="eliminarTareas(tarea)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       </div>
+
+    </div>
+    
+
+
+    <script src="vue.js"></script>
+    <script src="task.js"></script>
+
+
+
+</body>  
+
+</html>
